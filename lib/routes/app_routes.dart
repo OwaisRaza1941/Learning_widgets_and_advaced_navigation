@@ -1,0 +1,5 @@
+class AppRoutes {
+  static const String homeScreen = "/";
+  static const String aboutScreen = "/about"; // ✅ Fixed
+  static const String profileScreen = "/profile";
+}

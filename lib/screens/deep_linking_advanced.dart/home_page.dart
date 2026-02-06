@@ -14,12 +14,12 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () => context.go('${AppRoutes.profilePage}/owais'),
-              child: const Text("Go to Profile"),
+              child: Text("Go to Profile"),
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => context.go('/product/1'),
-              child: const Text("Go to Product"),
+              onPressed: () => context.go('${AppRoutes.productPage}/2'),
+              child: Text("Go to Product"),
             ),
           ],
         ),

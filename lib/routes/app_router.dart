@@ -32,27 +32,24 @@ class AppRouter {
   static GoRouter routers = GoRouter(
     initialLocation: '/',
     routes: [
+      GoRoute(name: 'home', path: '/', builder: (context, state) => HomePage()),
       GoRoute(
-        path: '/',
-        name: 'home',
-        builder: (context, state) => const HomePage(),
-      ),
-      GoRoute(
-        path: '/profile/:username',
         name: 'profile',
+        path: '${AppRoutes.profilePage}/:username',
         builder: (context, state) {
           final username = state.pathParameters['username']!;
           return ProfilePage(username: username);
         },
       ),
-     GoRoute(
-      path: '/product/:id',
-      builder: (context, state) {
-        final productId = state.pathParameters['id']!;
-        return ProductPage(productId: productId);
-      },
-    ),
+      GoRoute(
+        name: 'product',
+        path: '${AppRoutes.productPage}/:id',
+        builder: (context, state) {
+          final productId = state.pathParameters['id']!;
+          return ProductPage(productId: productId);
+        },
+      ),
     ],
-    errorBuilder: (context, state) => const ErrorPage(),
+    errorBuilder: (context, state) => ErrorPage(),
   );
 }
